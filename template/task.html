@@ -10,6 +10,7 @@
       <th scope="col">#</th>
       <th scope="col">Title</th>
       <th scope="col">Desciption</th>
+      <th scope="col">Date and time</th>
       
     </tr>
   </thead>
@@ -19,6 +20,7 @@
       <th scope="row">{{ forloop.counter }}</th>
       <td>{{items.title}}</td>
       <td>{{items.desc}}</td>
+      <td>{{items.time}}</td>
     </tr>
   {% endfor %}
 
