@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home %}active{% endblock home %}
+ {% block body %}
+ {% if success %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Your form has been submitted successfully.</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ {% endif %}
+
+ <div class="container my-3 w-75 stst00">
+    <h2 class="text-center">Add a Task</h2>
+    <form action="/" method="post">
+      {% csrf_token %} 
+        <div class="mb-3>
+          <label for="exampleInputEmail1" class="form-label">Title</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="title">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Description</label>
+          <textarea class="form-control" name="desc" id="" cols="20" rows="8"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+ </div>
+
+
+ {% endblock body %}

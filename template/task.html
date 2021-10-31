@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block about %}active{% endblock about %}
+ {% block body %}
+ <div class="container my-3 w-75 stst00">
+    <h2 class="text-center">List of item</h2>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Desciption</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for items in task %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{items.title}}</td>
+      <td>{{items.desc}}</td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+ </div>
+
+
+ {% endblock body %}
